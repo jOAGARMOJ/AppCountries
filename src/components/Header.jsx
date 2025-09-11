@@ -1,18 +1,15 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-
-function Header ({title, description}) {
+export default function Header({ title, description }) {
     return (
-        <header>
+        <header style={{ marginBottom: "1rem" }}>
             <h1>{title}</h1>
-            <p>{description}</p>
+            <p className="description">{description}</p>
         </header>
     );
 }
 
 Header.propTypes = {
-    title: ProTypes.string.isRequired,
-    description: ProTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string,
 };
-
-export default Header;
