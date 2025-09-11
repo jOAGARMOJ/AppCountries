@@ -1,35 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import header from "./components/header";
+import Search from "./components/Search";
+import { CountriesList } from "./Countries/Countrieslist";
+import { getCountriesByName } from "./actions/getCountriesByname";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+    const [countries, setCountries] = useState([]);
+    const [loading, setLoading] = useState(false);
 
-  return (
-    <>
+    const handleSearch = async (name) => {
+      if (!name.trim()) return;
+      setLoading(true);
+
+      try {
+        const results = await getCountriesByName(name);
+        setCountries(results);
+      } catch (error) {
+        console.error(error);
+        setCountries([]);
+      } finally {
+        setLoading(false);        
+      }
+    };
+    
+    return (
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <header title="countriesApp" description="Buscador de Paises" />
+        <Search placeholder= "Escribe un pais" onSearch={handleSearch} />
+        {loading ? <p>Cargando...</p> : <CountriesList countries={countries} />}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    );
+  }
 
-export default App
+export default App;
