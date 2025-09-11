@@ -1,9 +1,8 @@
 import { useState } from "react";
-import header from "./components/header";
+import Header from "./components/Header";
 import Search from "./components/Search";
 import { CountriesList } from "./Countries/Countrieslist";
 import { getCountriesByName } from "./actions/getCountriesByname";
-
 
 function App() {
     const [countries, setCountries] = useState([]);
@@ -26,7 +25,7 @@ function App() {
     
     return (
       <div>
-        <header title="countriesApp" description="Buscador de Paises" />
+        <Header title="countriesApp" description="Buscador de Paises" />
         <Search placeholder= "Escribe un pais" onSearch={handleSearch} />
         {loading ? <p>Cargando...</p> : <CountriesList countries={countries} />}
       </div>

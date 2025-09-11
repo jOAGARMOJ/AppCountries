@@ -1,4 +1,5 @@
-import ProTypes from 'prop-types';
+import PropTypes from 'prop-types';
+
 
 function Header ({title, description}) {
     return (
