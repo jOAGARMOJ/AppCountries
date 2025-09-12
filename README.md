@@ -76,6 +76,9 @@ Ejemplo de endpoint usado:
 ```bash
 https://restcountries.com/v3.1/name/{nombre-del-pais}
 ```
-
+creado por:
+Paola Andrea Rios Sanchez 1088322161
+Jorge Andres Garcia Mojica 1088026128
+Alejandro Muñoz Rios  1036252754
 
 
