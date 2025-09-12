@@ -2,18 +2,17 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 export default function Search({ placeholder, onSearch }) {
-
     const [query, setQuery] = useState("");
 
     const handleChange = (e) => {
-        const value = e.target.value;
-        setQuery(value);
+        setQuery(e.target.value);
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (query.trim()) {
-            onSearch(query); // Llama a la función pasada por props
+            onSearch(query);
+            setQuery(""); // <-- Esto reinicia el input después de buscar
         }
     };
 
@@ -32,11 +31,7 @@ export default function Search({ placeholder, onSearch }) {
                     display: "block",
                 }}
             />
-            <button className="btn-search"
-            
-                type="submit"
-                
-            >
+            <button className="btn-search" type="submit">
                 Buscar
             </button>
         </form>
@@ -47,6 +42,3 @@ Search.propTypes = {
     placeholder: PropTypes.string.isRequired,
     onSearch: PropTypes.func.isRequired,
 };
-
-
-

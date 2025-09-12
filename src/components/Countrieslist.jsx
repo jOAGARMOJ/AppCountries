@@ -13,7 +13,7 @@ export function CountriesList({ countries }) {
             marginTop: "1rem"
         }}>
             {countries.map((country) => (
-                <div key={country.name.common} style={{
+                <div className="country-list" key={country.name.common} style={{
                     border: "1px solid #ccc",
                     borderRadius: "8px",
                     padding: "0.5rem",

@@ -1,12 +1,81 @@
-# React + Vite
+# 🌍 App de Búsqueda de Países
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación web desarrollada con **React + Vite** que permite buscar países y mostrar información relevante obtenida desde una API pública.  
+Ideal para practicar consumo de APIs, manejo de estado en React y renderizado dinámico de componentes.
 
-Currently, two official plugins are available:
+## 🚀 Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🔎 **Búsqueda en tiempo real**: busca países escribiendo su nombre en el input.
+- 🧩 **Renderizado dinámico**: muestra tarjetas (cards) con la información de cada país.
+- 📜 **Historial de búsqueda**: se van anexando nuevas tarjetas al realizar más búsquedas.
+- ⚡ **Rendimiento optimizado** gracias a Vite y React 19.
+- 🌐 **Consumo de API REST** con [axios](https://axios-http.com).
 
-## Expanding the ESLint configuration
+## 🛠️ Tecnologías Utilizadas
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [React 19](https://react.dev/)
+- [Vite](https://vite.dev/) (para desarrollo rápido con HMR)
+- [Axios](https://axios-http.com/) (para consumo de API)
+- [PropTypes](https://www.npmjs.com/package/prop-types) (para validación de props)
+
+## 📂 Estructura del Proyecto
+
+```bash
+.
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── components/     # Componentes de UI (Cards, SearchBar, etc.)
+│   ├── App.jsx         # Componente principal de la aplicación
+│   ├── main.jsx        # Punto de entrada de React
+│   └── services/       # Lógica para llamadas a la API
+├── index.html
+├── package.json
+└── vite.config.js
+```
+
+## 🔧 Instalación y Uso
+
+1. **Clonar el repositorio**  
+```bash
+git clone https://github.com/tu-usuario/appcountries.git
+cd appcountries
+```
+
+2. **Instalar dependencias**  
+```bash
+npm install
+```
+
+3. **Ejecutar en modo desarrollo**  
+```bash
+npm run dev
+```
+Abre el navegador en [http://localhost:5173](http://localhost:5173).
+
+4. **Construir para producción**  
+```bash
+npm run build
+```
+
+5. **Previsualizar build**  
+```bash
+npm run preview
+```
+
+## 🌐 API Utilizada
+
+Esta app consume la API de [REST Countries](https://restcountries.com/) para obtener información de países:  
+- Nombre  
+- Capital  
+- Población  
+- Región  
+- Bandera  
+
+Ejemplo de endpoint usado:
+```bash
+https://restcountries.com/v3.1/name/{nombre-del-pais}
+```
+
+
+
