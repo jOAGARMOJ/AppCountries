@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div>
-      <Header title="countriesApp" description="Buscador de Paises" />
+      <Header title="countriesApp" description="Buscador de Paises 2" />
       <Search placeholder="Escribe un país" onSearch={handleSearch} />
 
       {loading && <p>Cargando...</p>}
